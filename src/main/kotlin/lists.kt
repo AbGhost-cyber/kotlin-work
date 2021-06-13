@@ -1,11 +1,11 @@
-fun main(){
-    val num = listOf(1,2,3,4,5,6)
+fun main() {
+    val num = listOf(1, 2, 3, 4, 5, 6)
     println("List: $num")
     println("Size: ${num.size}")
 
     //Access elements of the list
     println("Second element: ${num[1]}")
-    println("Last elements: ${num[num.size-1]}")
+    println("Last elements: ${num[num.size - 1]}")
     println("First: ${num.first()}")
     println("Last: ${num.last()}")
 
@@ -17,12 +17,12 @@ fun main(){
     println("List : $colors")
     println("Sorted list: ${colors.sorted()}")
 
-    val oddNum= listOf(5,3,7,1)
+    val oddNum = listOf(5, 3, 7, 1)
     println("Sorted list: ${oddNum.sorted()}")
     println("list: $oddNum")
 
     //MutableList
-    val entrees= mutableListOf<String>()
+    val entrees = mutableListOf<String>()
     println("Entrees: $entrees")
 
     //Add individual items using add()
@@ -31,7 +31,7 @@ fun main(){
     println("Add spaghetti: ${entrees.add("spaghetti")}")
 
     //Add a list of items using addAll()
-    val moreItems= listOf("ravioli", "lasagna", "fettuccine")
+    val moreItems = listOf("ravioli", "lasagna", "fettuccine")
     println("Add list: ${entrees.addAll(moreItems)}")
     println(entrees)
 
@@ -51,17 +51,12 @@ fun main(){
     //Check if the list is empty
     println("Empty? ${entrees.isEmpty()}")
 
-    val guestsPerFamily= listOf(2,4,1,3)
-    var totalGuests=0
-    var index=0
-    while(index<guestsPerFamily.size){
-        totalGuests+=guestsPerFamily[index]
-        index++
-    }
-    println("Total Guest Count: $totalGuests")
+    val guestsPerFamily = listOf(2, 4, 1, 3)
 
-    val names= listOf("Jessica", "Henry","Alicia","Jose")
-    for(name in names) {
-        println("$name - Number of characters: ${name.length}")
+    println("Total Guest Count: ${guestsPerFamily.sum()}")
+
+    val names = listOf("Jessica", "Henry", "Alicia", "Jose")
+    with(names) {
+        forEach { println("$it - Number of characters: ${it.length}") }
     }
 }
